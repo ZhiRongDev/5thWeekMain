@@ -1,0 +1,159 @@
+.banner{
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    @include rwd($ipad){
+        margin-bottom: 0;
+    }
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    @include rwd($ipad){
+        flex-wrap: wrap;
+    }
+}
+.aside{
+    width: 32%;
+    white-space: nowrap;   //除了加上這個語法，有沒有其他方式能夠讓 aside 不要被壓縮? 
+    @include rwd($ipad){
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    li:first-child{
+        //width: 300px;   >> flexbox 會讓 li 內部元素等寬
+        font-size: 1.5rem;
+        padding: 16px 102px;
+        font-weight: bold;
+        text-align: center;
+        background-color: #3F5D45;
+        color: #EAF0ED;
+    }
+    a{
+        display: block;
+        text-decoration: none;
+        font-size: 1.5rem;
+        padding: 16px 62px;  // 要扣掉 border 的寬度!!!
+        font-weight: bold;
+        color: #3F5D45;
+        text-align: center;
+        border: 1px solid #EAF0ED;
+        background-color: #fff;
+    }
+    a:hover{
+        background-color: #EAF0ED;
+    }
+    
+}
+.productCard{
+    width: 68%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    @include rwd($ipad){
+        width: 100%;
+        padding-right: 4%;
+    }
+    img{
+        display: block;
+    }
+    li{
+        width: 46%;
+        margin-left: 4%;
+        margin-bottom: 20px;
+        position: relative;
+        @include rwd($iPhone-6-Plus){
+            width: 96%;
+        }
+        img{
+            width: 100%; // 起始設定的 max-width: 100%; 會讓 img 填不滿容器
+        }
+        .addCart{
+            width: 100%;
+            display: block;
+            text-align: center;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            text-decoration: none;
+            color: #3F5D45;
+            font-weight: bold;
+            background-color:#EAF0ED;
+        }
+        .addCart:hover{
+            background-color: #3F5D45;
+            color: #EAF0ED;
+        }
+    }
+}
+.special{
+    position: absolute;
+    top: 0;
+    left: 20px;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+    font-weight: bold;
+    padding: 16px 10px;
+    color: #EAF0ED;
+    background-color: #3F5D45;
+}
+.favorite_border{
+    display: block;
+    position: absolute;
+    top: 0; 
+    right: 0;
+    padding: 20px;
+    img{
+       display: block;
+    }
+}
+.productCard-text{
+    display: flex;
+    flex-wrap: wrap;
+    color: #3F5D45;
+    font-weight: bold;
+    h2{
+        width: 58%;
+        text-align: center;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        border: 1px solid #EAF0ED;
+    }
+    .price{
+        width: 42%;
+        text-align: center;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        border: 1px solid #EAF0ED;
+    } 
+}
+.changePage{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 60px;
+    @include rwd($ipad){
+        justify-content: center;
+    }
+    a{
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        text-decoration: none;
+        color: #3F5D45;
+        font-size: 1.25rem;
+        padding: 14px 23px;
+        border: 1px solid #EAF0ED;
+    }
+    .arrow{
+        a{
+            padding: 17px;
+        }
+    }
+    a:hover{
+        background-color: #3F5D45;
+        color: #EAF0ED;
+    }
+    .arrow a:hover{
+        background-color: #EAF0ED;
+    }
+    
+}

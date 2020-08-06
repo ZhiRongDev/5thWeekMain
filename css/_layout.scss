@@ -1,0 +1,243 @@
+body,html {
+    font-family: $font-family;
+    line-height: $line-height-body;
+    font-size: $font-size;
+}
+h1, h2, h3, h4, h5, h6 {
+    line-height: $line-height-title;
+}
+
+//header
+.wrap{
+    max-width: 940px;
+    margin: 0 auto;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
+    @include rwd($ipad){
+        padding-right: 15px; 
+        padding-left: 15px;
+    }
+    ul{
+        display: flex;
+        justify-content: space-around;     
+    }
+    li{
+        a{
+            color: #3F5D45;
+            display: block;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 0 30px;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+    }
+    li:last-child{
+        margin-right: 0px;
+    }   
+}
+.shopping_cart{
+    padding-left: 30px;
+    height: 24px;
+    @include rwd($ipad){
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+.header-img{
+    display: block;
+    background-image: url('https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/student-week1/logo-all-dark.svg');
+    width: 220px;
+    height: 40px;
+    background-repeat: no-repeat;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    @include rwd($ipad){
+        background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/student-week1/logotype-sm-dark.svg);
+        background-position: top center;
+        width: 116px;
+        height: 20px;
+    }
+}
+.navbar-collapse{
+    display: flex;
+    align-items: center;
+    @include rwd($ipad){
+        ul{
+            position: absolute;
+            left: 0;
+            top: 100%;
+            width: 100%;
+            background: white;
+            flex-direction: column;
+            transition: all .3s;
+            max-height: 0;
+            overflow: hidden;
+            &.active{
+                max-height: 155px;
+            }
+            a{
+                text-align: center;
+                padding: 15px 0;
+                &:hover{
+                    background-color: #EAF0ED;
+                    text-decoration: none;
+                }
+            }
+        } 
+    }
+}
+.burger-Menu{
+    display: none;
+    background-image: url('https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/student-week1/dehaze-24px.png');
+    padding: 25px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    @include rwd($ipad){
+        display: block;
+    }
+}
+//footer
+footer{
+    background-color: #EAF0ED;
+}
+.footer-email{
+    background-color: #3F5D45;
+    .wrap{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #EAF0ED;
+        padding: 38px 0;
+        @include rwd($ipad){
+            flex-direction: column;
+        }
+    }
+}
+.email-text{
+    display: flex;
+    align-items: center;
+    @include rwd($ipad){
+        margin-bottom: 30px;
+    }
+    @include rwd($iPhone-6-Plus){
+        h3{
+            font-size: 1.25rem;
+        }
+    }
+    img{
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin-right: 20px; 
+    }
+    h3{
+        font-size: 1.5rem;
+    }
+
+}
+.form-container{
+    background-color: #EAF0ED;
+    display: flex;
+    align-items: center;
+    width: 40%;
+    @include rwd($ipad){
+        width: 80%;
+    }
+    img{
+        width: 24px;
+        height: 24px;
+        margin: 16px 20px;
+    }
+    input[type=email]{
+        width:100%;      // input 不下 width 100% 就無法自適應寬度? (會出現 x 軸) 
+        display: block;          
+        border: none;
+        padding: 16px;
+        background-color: #EAF0ED;
+    }
+    .btn{
+        flex-shrink: 0;    //加上這行寬度就正常了
+        display: block;
+        background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/student-week1/arrow_forward-24px.png);
+        width: 64px;      //為何無法正常顯示寬度? 
+        height: 56px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-color: #FFE180;
+        border: none;
+        cursor: pointer;
+    }
+}
+.footer-info{
+    display: flex;
+    justify-content: space-between; 
+    padding: 40px 0;
+    @include rwd($ipad){
+        flex-direction: column;
+        padding-left: 10%;
+    }
+
+}
+.footer-left{
+    ul{
+        margin-bottom: 30px;
+    }
+    li{
+        color: #3F5D45;
+    }
+}
+.footerLogo{
+    display: block;
+    max-width: 171px;
+    margin-bottom: 115px;
+    @include rwd($ipad){
+        margin-bottom: 40px;
+    }
+}
+.footerLinks{
+    display: flex;
+    @include rwd($ipad){
+        margin-bottom: 20px;
+    }
+    a{
+        display: block;
+        margin-right: 10px;
+    }
+    img{
+        width: 32px;
+        height: 32px;      
+    }
+}
+.footer-right{
+    h2{
+        -webkit-writing-mode: vertical-rl;
+        writing-mode: vertical-rl;
+        font-size: 1.5rem;
+        letter-spacing: 6.5px;
+        font-family: 'Noto Serif TC', serif;
+        color: #3F5D45;
+        float: right;
+        @include rwd($ipad){
+            display: none;
+        }
+    }
+    p{
+        color: #3F5D45;
+        clear: both; 
+    }
+}
+.header, .footer-email .wrap, .footer-info{
+    @include rwd($pc-padding){
+        padding-right: 4%;
+        padding-left: 4%;
+    }
+}
