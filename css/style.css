@@ -648,6 +648,12 @@ footer {
           align-items: center;
 }
 
+@media (max-width: 768px) {
+  .checkout-success {
+    margin-bottom: 0;
+  }
+}
+
 .checkout-success .check-icon {
   position: relative;
 }
