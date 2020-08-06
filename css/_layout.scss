@@ -6,12 +6,11 @@ body,html {
 h1, h2, h3, h4, h5, h6 {
     line-height: $line-height-title;
 }
-
-//header
 .wrap{
     max-width: 940px;
     margin: 0 auto;
 }
+//header
 .header{
     display: flex;
     justify-content: space-between;
