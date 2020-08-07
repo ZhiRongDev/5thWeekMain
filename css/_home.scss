@@ -32,6 +32,9 @@
         height: 256px;
         display: block;
         object-fit: cover;
+        @include rwd($ipad){
+            height: 180px;
+        }
     }
     a{
         display: flex;
@@ -54,15 +57,42 @@
             background-color: rgba(255, 225, 128, 0.8);
             font-weight: bold;
         }
+        @include rwd($ipad){
+            font-size: 1.25rem;
+            letter-spacing: 0.5rem;
+        }
     }
 }
 .home-intro{
     background-color: #EAF0ED;
-    height: 420px;
-    margin-bottom: 105px;
-    .wrap{
+    .home-intro-title{
+        display: none;
+        background-color: #fff;
+        @include rwd($ipad){
+            display: block;
+            margin-top: -75px;
+            padding-bottom: 30px;
+            img{
+                display: block;
+                max-width: 196px;
+                height: 60px;
+                margin: 0 auto;
+            }
+        }
+    }
+    .home-intro-content{
         display: flex;
         justify-content: space-between;
+        height: 420px;
+        margin-bottom: 105px;
+        @include rwd($ipad){
+            flex-direction: column;
+            // justify-content: flex-start;
+            height: auto;
+            &.content-2nd{
+              flex-direction: column-reverse;  
+            }
+        }
     }
     .intro-Pic{
         margin-top: -20px;  // 這邊用 position: relative; top:-20px 的話會整條線偏移，導致文字沒辦法居中
@@ -74,6 +104,17 @@
         }
         &:last-child {
             margin-left: 40px;
+        }
+        @include rwd($ipad){
+            width: 100%;
+            height: 250px;
+            margin-top: 0;
+            &:first-child {
+                margin-right: 0;
+            }
+            &:last-child {
+                margin-left: 0;
+            }
         }
     }
     .txt{
@@ -87,12 +128,27 @@
             line-height: 2rem;
             color: #8DA291;
         }
+        @include rwd($ipad){
+            width: 100%;
+            display: block;
+            padding: 30px;
+            p{
+                height: auto;
+                writing-mode: horizontal-tb;
+                &:first-child{
+                    margin-bottom: 20px;
+                }
+            }
+        }
     }
     .txt-Pic{
         max-width: 90px;
         height: 308px;
         margin-top: -25px;
         align-self: start;
+        @include rwd($ipad){
+            display: none;
+        }
     }
 }
 .home-noReason-pic{
@@ -100,20 +156,53 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 100px;
-    img{
+    img:nth-child(1){
+        display: block;
         max-width: 90px;
         height: 330px;
     }
+    img:nth-child(2){
+        max-width: 226px;
+        height: 60px;
+        display: none;
+    }
+    @include rwd($ipad){
+        margin-top: -75px;
+        margin-bottom: 30px;
+        img:nth-child(1){
+            display: none;
+        }
+        img:nth-child(2){
+            display: block;
+        }
+    }
+    
 }
 .homeProduct{
     &.productCard{
         width: 100%;
         margin-bottom: 60px;
+        @include rwd($ipad){
+            padding-right: 0;
+            margin-bottom: 20px;
+        }
         li{
             width: 32%;
             margin: 0;
             &:nth-child(1),  &:nth-child(2){
                 margin-right: 2%;
+            }
+        }
+    }
+    
+    @include rwd(600px){
+        &.productCard{
+            li{
+                width: 100%;
+                margin: 0 6% 6% 6%;
+                &:nth-child(1),  &:nth-child(2){
+                    margin-right: 6%;
+                }        
             }
         }
     }
