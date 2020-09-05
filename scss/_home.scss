@@ -13,6 +13,9 @@
     margin: 0 auto;
     position: relative;
     top: -105px;
+    @include rwd($ipad){
+        top: 0;
+    }
     .item{
         width: 33.3333%;
         position: relative;
@@ -70,7 +73,8 @@
         background-color: #fff;
         @include rwd($ipad){
             display: block;
-            margin-top: -75px;
+            //margin-top: -75px;
+            padding-top: 30px;
             padding-bottom: 30px;
             img{
                 display: block;
@@ -86,6 +90,7 @@
         height: 420px;
         margin-bottom: 105px;
         @include rwd($ipad){
+            margin-bottom: 0;
             flex-direction: column;
             // justify-content: flex-start;
             height: auto;
@@ -156,6 +161,9 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 100px;
+    @include rwd($ipad){
+        margin-bottom: 0;
+    }
     img:nth-child(1){
         display: block;
         max-width: 90px;
@@ -167,8 +175,10 @@
         display: none;
     }
     @include rwd($ipad){
-        margin-top: -75px;
-        margin-bottom: 30px;
+        //margin-top: -75px;
+        //margin-bottom: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
         img:nth-child(1){
             display: none;
         }
